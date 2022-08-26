@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'home.dart';
 import 'list_tile_view.dart';
-import 'gridview_page.dart';
-import 'gridview_card_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key); //1.constructor
@@ -10,9 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: GridViewCardPage(
-
-      ),
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
