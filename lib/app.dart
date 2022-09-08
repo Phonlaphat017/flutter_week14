@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -10,7 +12,11 @@ class MyApp extends StatelessWidget {
     //2.build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      //home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/':(context)=>HomePage(),
+      },
     );
   }
 }
