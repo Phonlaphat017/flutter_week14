@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'list_view_separate.dart';
+
+import 'contact.dart';
 import 'gridview_card_page.dart';
+import 'list_view_meru.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -9,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,17 +21,29 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              debugPrint("OK");
+              setState(() {
+                _count ++;
+                debugPrint("count: $_count");
+              });
             },
             icon: Icon(Icons.delete),
           ),
           IconButton(
             onPressed: () {
-              debugPrint("OK");
+              debugPrint("search");
             },
             icon: Icon(Icons.search),
           ),
         ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Liver Pool",style: Theme.of(context).textTheme.displaySmall),
+            Text('$_count',style: Theme.of(context).textTheme.displayLarge)
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -50,14 +66,21 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.apps),
               title: Text('Grid View'),
               onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GridViewCardPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => GridViewCardPage()));
               },
             ),
             ListTile(
               leading: Icon(Icons.api),
               title: Text('List View'),
               onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ListViewSeparate()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewMenuPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.api),
+              title: Text('Contact'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage()));
               },
             ),
           ],
