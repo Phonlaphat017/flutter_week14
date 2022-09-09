@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'contact.dart';
 import 'gridview_card_page.dart';
 import 'list_view_meru.dart';
+import 'profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -81,6 +82,13 @@ class _HomePageState extends State<HomePage> {
               title: Text('Contact'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.api),
+              title: Text('Profile'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
               },
             ),
           ],

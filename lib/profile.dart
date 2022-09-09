@@ -12,9 +12,11 @@ class Profile extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text("นายมาร์ค ซัคคาเบิร์ก"),
-            Text("จบ ม.3:xxxx"),
-            Text("งานอดิเรก:xxxx"),
+            Text("ชื่อ พลภัทร ทบวงศรี"),
+            Text("จบ ปวช.3"),
+            Text("วิทยาลัยเทคนิคตราด"),
+            Text("แผนกอิเล็กทรอนิกส์"),
+            Text("งานอดิเรก:ดูหหนัง,ฟังเพลง,เล่นเกม,นอน"),
           ],
         ),
       ),
